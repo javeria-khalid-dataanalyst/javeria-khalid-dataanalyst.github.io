@@ -125,11 +125,21 @@ h3 {
 
     line-height: 1.15;
 
+    font-weight: 700;
+
+    letter-spacing: -0.025em;
+
 }
 
 
 h1 {
+
     font-size: clamp(3.2rem, 7vw, 6rem);
+
+    font-weight: 800;
+
+    letter-spacing: -0.045em;
+
 }
 
 
@@ -141,19 +151,18 @@ h2 {
         3.3rem
     );
 
+    font-weight: 750;
+
 }
 
 
 h3 {
+
     font-size: 1.3rem;
+
+    font-weight: 700;
+
 }
-
-
-p {
-    color: var(--text-secondary);
-}
-
-
 /* =========================================================
    4. NAVIGATION
 ========================================================= */
@@ -396,18 +405,23 @@ p {
 }
 
 
-.hero-buttons {
+.hero-buttons .btn {
 
-    display: flex;
+    min-height: 48px;
 
-    flex-wrap: wrap;
+    padding: 0 22px;
 
-    gap: 14px;
+    border-radius: 12px;
 
-    margin-top: 35px;
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.88rem;
+
+    font-weight: 650;
+
+    letter-spacing: -0.01em;
 
 }
-
 
 /* =========================================================
    6. BUTTONS
@@ -500,37 +514,143 @@ p {
    7. SOCIAL LINKS
 ========================================================= */
 
+/* =========================================================
+   7. PREMIUM SOCIAL BUTTONS
+========================================================= */
+
 .social-links {
 
     display: flex;
 
-    gap: 22px;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
 
     margin-top: 28px;
 
 }
 
 
-.social-links a {
+.social-btn {
 
-    color: var(--text-muted);
+    display: inline-flex;
 
-    font-size: 0.85rem;
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 44px;
+
+    padding: 0 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: var(--text-main);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.01em;
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
 
     transition:
-        color 0.2s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 
 }
 
 
-.social-links a:hover {
+.social-icon {
 
-    color:
-        var(--blue-light);
+    width: 25px;
+
+    height: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: var(--text-main);
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
 
 }
 
 
+.social-btn:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(79, 140, 255, 0.45);
+
+    background:
+        rgba(79, 140, 255, 0.08);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20),
+        0 0 20px rgba(79, 140, 255, 0.08);
+
+}
+
+
+.social-btn:hover .social-icon {
+
+    transform: scale(1.08);
+
+}
+
+
+/* Individual hover states */
+
+.github-btn:hover {
+
+    border-color:
+        rgba(255, 255, 255, 0.28);
+
+}
+
+
+.linkedin-btn:hover {
+
+    border-color:
+        rgba(79, 140, 255, 0.55);
+
+}
+
+
+.email-btn:hover {
+
+    border-color:
+        rgba(139, 92, 246, 0.55);
+
+}
 /* =========================================================
    8. HERO ANALYTICS VISUAL
 ========================================================= */
@@ -2425,6 +2545,31 @@ p {
 
 }
 
+.social-links {
+
+    gap: 9px;
+
+}
+
+
+.social-btn {
+
+    min-height: 42px;
+
+    padding: 0 13px;
+
+    font-size: 0.78rem;
+
+}
+
+
+.social-icon {
+
+    width: 23px;
+
+    height: 23px;
+
+}
 
 /* =========================================================
    24. SMALL MOBILE
@@ -2476,6 +2621,11 @@ p {
 
 }
 
+.social-links {
+
+    justify-content: center;
+
+}
 
 /* =========================================================
    25. ACCESSIBILITY
