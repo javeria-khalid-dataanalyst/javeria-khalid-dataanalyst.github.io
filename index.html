@@ -2,616 +2,233 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Javeria Khalid | Data Analyst</title>
+    <title>Javeria Khalid | Junior Data Analyst</title>
 
     <meta name="description"
-          content="Javeria Khalid - Data Analyst portfolio showcasing Power BI, SQL, Power Query, Excel and data analytics projects.">
+          content="Javeria Khalid is a Junior Data Analyst specializing in SQL, Power BI, Excel, Power Query, Python, DAX, data cleaning, analysis and visualization.">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta name="keywords"
+          content="Javeria Khalid, Junior Data Analyst, Data Analyst, Power BI, SQL, Excel, Power Query, Python, DAX">
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <meta name="author" content="Javeria Khalid">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8f9fc;
-            color: #172033;
-            line-height: 1.6;
-        }
+    <!-- Open Graph -->
+    <meta property="og:title" content="Javeria Khalid | Junior Data Analyst">
+    <meta property="og:description"
+          content="Turning raw data into clear insights and meaningful business decisions.">
+    <meta property="og:type" content="website">
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* NAVIGATION */
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-        nav {
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            border-bottom: 1px solid #e6e8ef;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: #352a73;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            color: #555d70;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #6c4ce3;
-        }
-
-        /* HERO */
-
-        .hero {
-            max-width: 1100px;
-            margin: auto;
-            padding: 110px 25px 100px;
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 7px 14px;
-            background: #eeeaff;
-            color: #6346c7;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 70px);
-            line-height: 1.05;
-            margin-bottom: 20px;
-            color: #172033;
-        }
-
-        .hero h1 span {
-            color: #6848d8;
-        }
-
-        .hero h2 {
-            font-size: 24px;
-            font-weight: 500;
-            color: #525b70;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            color: #697386;
-            font-size: 17px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 13px 22px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .primary {
-            background: #6848d8;
-            color: white;
-        }
-
-        .primary:hover {
-            background: #5033b5;
-            transform: translateY(-2px);
-        }
-
-        .secondary {
-            border: 1px solid #d8dbe5;
-            background: white;
-            color: #3e4657;
-        }
-
-        .secondary:hover {
-            border-color: #6848d8;
-            color: #6848d8;
-            transform: translateY(-2px);
-        }
-
-        /* HERO VISUAL */
-
-        .hero-card {
-            background: white;
-            border: 1px solid #e5e7ef;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 40px rgba(35, 25, 80, 0.08);
-        }
-
-        .hero-card-title {
-            font-size: 13px;
-            color: #777f91;
-            margin-bottom: 15px;
-        }
-
-        .metric {
-            font-size: 42px;
-            font-weight: 700;
-            color: #6848d8;
-            margin-bottom: 5px;
-        }
-
-        .metric-label {
-            color: #737b8d;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        .mini-bar {
-            height: 9px;
-            background: #ececf5;
-            border-radius: 20px;
-            margin-bottom: 12px;
-        }
-
-        .mini-bar div {
-            height: 100%;
-            width: 82%;
-            background: #6848d8;
-            border-radius: 20px;
-        }
-
-        .dashboard-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-            color: #6e7687;
-        }
-
-        /* SECTIONS */
-
-        section {
-            padding: 85px 25px;
-        }
-
-        .section-container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-heading {
-            margin-bottom: 45px;
-        }
-
-        .section-heading .small-title {
-            color: #6848d8;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-        }
-
-        .section-heading h2 {
-            font-size: 36px;
-            color: #172033;
-        }
-
-        .section-heading p {
-            max-width: 650px;
-            color: #71798a;
-            margin-top: 10px;
-        }
-
-        /* ABOUT */
-
-        .about {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .about-text p {
-            color: #697386;
-            margin-bottom: 15px;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-content: flex-start;
-        }
-
-        .skill {
-            background: #f1efff;
-            color: #5840b4;
-            padding: 10px 15px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            background: #f8f9fc;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-        }
-
-        .project-card {
-            background: white;
-            border: 1px solid #e5e7ef;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(35, 25, 80, 0.09);
-        }
-
-        .project-visual {
-            height: 190px;
-            background: linear-gradient(135deg, #eeeaff, #f5f7ff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .dashboard-mockup {
-            width: 78%;
-            height: 125px;
-            background: white;
-            border: 1px solid #dddfea;
-            border-radius: 8px;
-            padding: 14px;
-            box-shadow: 0 8px 20px rgba(40, 30, 80, 0.08);
-        }
-
-        .mock-title {
-            width: 45%;
-            height: 8px;
-            background: #6848d8;
-            border-radius: 5px;
-            margin-bottom: 14px;
-        }
-
-        .mock-row {
-            display: flex;
-            gap: 8px;
-            height: 70px;
-        }
-
-        .mock-box {
-            flex: 1;
-            border-radius: 5px;
-            background: #f0f1f6;
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-number {
-            color: #6848d8;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .project-content h3 {
-            font-size: 22px;
-            margin: 7px 0 10px;
-        }
-
-        .project-content p {
-            color: #6c7486;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .project-tools {
-            color: #6848d8;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .project-button {
-            display: inline-block;
-            padding: 10px 17px;
-            border: 1px solid #6848d8;
-            color: #6848d8;
-            border-radius: 7px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .project-button:hover {
-            background: #6848d8;
-            color: white;
-        }
-
-        /* SKILLS */
-
-        .skills-section {
-            background: white;
-        }
-
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .skill-box {
-            padding: 25px;
-            border: 1px solid #e5e7ef;
-            border-radius: 12px;
-            background: #fafaff;
-        }
-
-        .skill-box h3 {
-            margin-bottom: 7px;
-            font-size: 18px;
-        }
-
-        .skill-box p {
-            color: #737b8c;
-            font-size: 14px;
-        }
-
-        /* CONTACT */
-
-        .contact {
-            background: #171b2b;
-            color: white;
-            text-align: center;
-        }
-
-        .contact .section-heading h2 {
-            color: white;
-        }
-
-        .contact .section-heading p {
-            margin: 10px auto 25px;
-            color: #b7bdcc;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .contact-button {
-            padding: 12px 20px;
-            border: 1px solid #41475a;
-            border-radius: 8px;
-            color: white;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .contact-button:hover {
-            border-color: #9c86ff;
-            color: #c5baff;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #111522;
-            color: #858da0;
-            text-align: center;
-            padding: 22px;
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                padding-top: 70px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skill-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<nav>
-    <div class="nav-container">
-        <div class="logo">Javeria Khalid</div>
+<header class="navbar">
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+    <div class="container nav-container">
 
+        <a href="#home" class="logo">
+            JK<span>.</span>
+        </a>
 
-<!-- HERO -->
+        <nav class="nav-links">
 
-<header class="hero">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Journey</a>
+            <a href="#contact">Contact</a>
 
-    <div>
+        </nav>
 
-        <div class="tag">DATA ANALYST PORTFOLIO</div>
-
-        <h1>
-            Turning Data Into
-            <span>Clear Insights.</span>
-        </h1>
-
-        <h2>Data Analyst | Power BI | SQL | Excel</h2>
-
-        <p>
-            I analyze, transform, and visualize data to uncover
-            meaningful patterns and turn complex information into
-            clear, business-focused insights.
-        </p>
-
-        <div class="buttons">
-
-            <a href="#projects" class="btn primary">
-                View My Projects
-            </a>
-
-            <a href="https://github.com/javeria-khalid-dataanalyst"
-               class="btn secondary"
-               target="_blank">
-                GitHub
-            </a>
-
-            <!-- Replace YOUR-LINKEDIN-URL with your actual LinkedIn URL -->
-            <a href="YOUR-LINKEDIN-URL"
-               class="btn secondary"
-               target="_blank">
-                LinkedIn
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="hero-card">
-
-        <div class="hero-card-title">
-            ANALYTICS FOCUS
-        </div>
-
-        <div class="metric">
-            Power BI
-        </div>
-
-        <div class="metric-label">
-            Interactive dashboards & business intelligence
-        </div>
-
-        <div class="dashboard-label">
-            <span>SQL & Data Preparation</span>
-            <span>✓</span>
-        </div>
-
-        <div class="mini-bar">
-            <div></div>
-        </div>
-
-        <div class="dashboard-label">
-            <span>Power Query & Transformation</span>
-            <span>✓</span>
-        </div>
-
-        <div class="mini-bar">
-            <div></div>
-        </div>
-
-        <div class="dashboard-label">
-            <span>Business Analysis</span>
-            <span>✓</span>
-        </div>
+        <button class="menu-toggle" aria-label="Open navigation">
+            ☰
+        </button>
 
     </div>
 
 </header>
 
 
-<!-- ABOUT -->
+<main>
 
-<section id="about" class="about">
+<!-- =========================
+     HERO SECTION
+========================= -->
 
-    <div class="section-container">
+<section id="home" class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                DATA ANALYSIS • BUSINESS INTELLIGENCE
+            </p>
+
+            <h1>
+                Javeria Khalid
+            </h1>
+
+            <h2>
+                Junior Data Analyst
+            </h2>
+
+            <p class="hero-tagline">
+                Turning raw data into clear insights and meaningful
+                business decisions.
+            </p>
+
+            <p class="hero-description">
+                I clean, analyze, and transform data into meaningful
+                insights and interactive dashboards using SQL, Power BI,
+                Excel, Power Query, and Python.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Let's Connect
+                </a>
+
+            </div>
+
+            <div class="social-links">
+
+                <!-- Replace these links -->
+
+                <a href="https://github.com/javeria-khalid-dataanalyst"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+                <a href="YOUR_LINKEDIN_URL"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:YOUR_EMAIL@example.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO ANALYTICS VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="analytics-card main-card">
+
+                <div class="card-header">
+
+                    <span>Analytics Overview</span>
+
+                    <span class="status-dot"></span>
+
+                </div>
+
+                <div class="kpi-grid">
+
+                    <div class="mini-kpi">
+                        <small>Revenue</small>
+                        <strong>$84.2K</strong>
+                        <span>+12.8%</span>
+                    </div>
+
+                    <div class="mini-kpi">
+                        <small>Profit</small>
+                        <strong>$21.7K</strong>
+                        <span>+8.4%</span>
+                    </div>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="chart-line"></div>
+
+                    <div class="chart-bars">
+
+                        <i style="height:35%"></i>
+                        <i style="height:55%"></i>
+                        <i style="height:42%"></i>
+                        <i style="height:70%"></i>
+                        <i style="height:62%"></i>
+                        <i style="height:88%"></i>
+                        <i style="height:76%"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card card-one">
+                <small>SQL</small>
+                <strong>Query</strong>
+            </div>
+
+            <div class="floating-card card-two">
+                <small>Power BI</small>
+                <strong>Dashboard</strong>
+            </div>
+
+            <div class="floating-card card-three">
+                <small>Python</small>
+                <strong>Analysis</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="section">
+
+    <div class="container">
 
         <div class="section-heading">
 
-            <div class="small-title">
-                About Me
-            </div>
+            <p class="section-label">
+                ABOUT ME
+            </p>
 
-            <h2>Data with a purpose.</h2>
+            <h2>
+                Making data easier to understand.
+            </h2>
 
         </div>
 
@@ -620,38 +237,78 @@
 
             <div class="about-text">
 
-                <p>
-                    I'm a data analytics professional focused on
-                    transforming raw data into meaningful insights
-                    and decision-support dashboards.
+                <p class="lead">
+                    I'm a Junior Data Analyst with a passion for making
+                    data easier to understand and use.
                 </p>
 
                 <p>
-                    My projects combine data preparation, SQL,
-                    Power Query, Power BI, DAX, and data visualization
-                    to solve realistic business problems.
+                    I enjoy cleaning messy data, uncovering insights,
+                    and building clear, interactive dashboards using
+                    SQL, Power BI, Excel, Python, and Power Query.
                 </p>
 
                 <p>
-                    I particularly enjoy taking messy or complex
-                    information and turning it into something
-                    structured, understandable, and useful.
+                    My approach combines analytical thinking with strong
+                    attention to presentation. I focus on transforming
+                    raw datasets into structured information that can
+                    support better decisions.
+                </p>
+
+                <p>
+                    With a background in Applied Mathematics and years
+                    of teaching experience, I bring analytical thinking,
+                    problem solving, and the ability to explain complex
+                    ideas in a simple way.
                 </p>
 
             </div>
 
 
-            <div class="skills">
+            <div class="stats-grid">
 
-                <div class="skill">Power BI</div>
-                <div class="skill">SQL / MySQL</div>
-                <div class="skill">Power Query</div>
-                <div class="skill">DAX</div>
-                <div class="skill">Excel</div>
-                <div class="skill">Data Cleaning</div>
-                <div class="skill">Data Modeling</div>
-                <div class="skill">Data Visualization</div>
-                <div class="skill">Business Analysis</div>
+                <div class="stat-card">
+
+                    <strong>10+</strong>
+
+                    <span>
+                        Years Teaching Experience
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>5+</strong>
+
+                    <span>
+                        Analytics Projects
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>SQL</strong>
+
+                    <span>
+                        Data Querying
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>BI</strong>
+
+                    <span>
+                        Power BI & Dashboards
+                    </span>
+
+                </div>
 
             </div>
 
@@ -662,46 +319,232 @@
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =========================
+     SKILLS
+========================= -->
 
-<section id="projects" class="projects">
+<section id="skills" class="section section-dark">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-heading">
 
-            <div class="small-title">
-                Featured Work
-            </div>
+            <p class="section-label">
+                MY TOOLKIT
+            </p>
 
-            <h2>Selected Projects</h2>
+            <h2>
+                Skills & Technologies
+            </h2>
 
             <p>
-                A selection of analytics projects demonstrating
-                data preparation, visualization, business analysis,
-                and dashboard development.
+                Tools I use to clean, transform, analyze and communicate data.
             </p>
 
         </div>
 
 
-        <div class="project-grid">
+        <div class="skills-grid">
+
+
+            <!-- DATA ANALYSIS -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    SQL
+                </div>
+
+                <h3>
+                    Data Analysis
+                </h3>
+
+                <p>
+                    Extracting insights from structured datasets
+                    and answering business questions.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>SQL</span>
+                    <span>Excel</span>
+                    <span>Python</span>
+                    <span>Pandas</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATA TRANSFORMATION -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ETL
+                </div>
+
+                <h3>
+                    Data Transformation
+                </h3>
+
+                <p>
+                    Cleaning, transforming and preparing raw data
+                    for reliable analysis.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>Power Query</span>
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>ETL</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUSINESS INTELLIGENCE -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    BI
+                </div>
+
+                <h3>
+                    Business Intelligence
+                </h3>
+
+                <p>
+                    Building interactive dashboards and analytical
+                    reports that communicate insights clearly.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>Power BI</span>
+                    <span>DAX</span>
+                    <span>Data Modeling</span>
+                    <span>KPIs</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- VISUALIZATION -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    VIS
+                </div>
+
+                <h3>
+                    Data Visualization
+                </h3>
+
+                <p>
+                    Turning complex datasets into clear visual
+                    stories and decision-ready reports.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>Power BI</span>
+                    <span>Excel</span>
+                    <span>Matplotlib</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects" class="section">
+
+    <div class="container">
+
+        <div class="section-heading project-heading">
+
+            <div>
+
+                <p class="section-label">
+                    SELECTED WORK
+                </p>
+
+                <h2>
+                    Featured Projects
+                </h2>
+
+                <p>
+                    Practical analytics projects focused on solving
+                    real-world data problems.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT FILTERS -->
+
+        <div class="project-filters">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="powerbi">
+                Power BI
+            </button>
+
+            <button class="filter-btn" data-filter="sql">
+                SQL
+            </button>
+
+            <button class="filter-btn" data-filter="cleaning">
+                Data Cleaning
+            </button>
+
+            <button class="filter-btn" data-filter="python">
+                Python
+            </button>
+
+        </div>
+
+
+        <div class="projects-grid">
 
 
             <!-- PROJECT 1 -->
 
-            <article class="project-card">
+            <article class="project-card"
+                     data-category="cleaning">
 
-                <div class="project-visual">
+                <div class="project-image">
 
-                    <div class="dashboard-mockup">
+                    <div class="mock-dashboard">
 
-                        <div class="mock-title"></div>
+                        <div class="mock-top"></div>
 
-                        <div class="mock-row">
-                            <div class="mock-box"></div>
-                            <div class="mock-box"></div>
-                            <div class="mock-box"></div>
+                        <div class="mock-content">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
                         </div>
 
                     </div>
@@ -711,29 +554,35 @@
 
                 <div class="project-content">
 
-                    <div class="project-number">
-                        PROJECT 01
+                    <div class="project-tools">
+
+                        <span>Power Query</span>
+                        <span>SQL</span>
+                        <span>Python</span>
+
                     </div>
 
                     <h3>
-                        KiddCo Toys
+                        Data Cleaning & Transformation
                     </h3>
 
                     <p>
-                        2023 Sales Performance Dashboard analyzing
-                        revenue, product performance, store performance,
-                        YoY growth, and target achievement.
+                        Practical data cleaning workflow focused on
+                        transforming raw and inconsistent datasets
+                        into analysis-ready data.
                     </p>
 
-                    <div class="project-tools">
-                        Power BI · Power Query · DAX · Data Modeling
-                    </div>
+                    <div class="project-links">
 
-                    <a href="https://github.com/javeria-khalid-dataanalyst/kiddco-toys-sales-dashboard"
-                       class="project-button"
-                       target="_blank">
-                        View Project →
-                    </a>
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                        <a href="#" class="github-link">
+                            GitHub
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -742,18 +591,29 @@
 
             <!-- PROJECT 2 -->
 
-            <article class="project-card">
+            <article class="project-card"
+                     data-category="sql">
 
-                <div class="project-visual">
+                <div class="project-image">
 
-                    <div class="dashboard-mockup">
+                    <div class="mock-dashboard sales-dashboard">
 
-                        <div class="mock-title"></div>
+                        <div class="mock-kpis">
 
-                        <div class="mock-row">
-                            <div class="mock-box"></div>
-                            <div class="mock-box"></div>
-                            <div class="mock-box"></div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="mock-chart">
+
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+
                         </div>
 
                     </div>
@@ -763,35 +623,164 @@
 
                 <div class="project-content">
 
-                    <div class="project-number">
-                        PROJECT 02
+                    <div class="project-tools">
+
+                        <span>SQL</span>
+                        <span>Power BI</span>
+                        <span>DAX</span>
+
                     </div>
 
                     <h3>
-                        Project Performance & Workforce Analytics
+                        Product Sales Analysis
                     </h3>
 
                     <p>
-                        End-to-end analysis of departmental budgets,
-                        workforce costs, project expenses, financial
-                        health, and project status.
+                        End-to-end analysis of product sales,
+                        revenue, profitability, categories,
+                        customers and sales trends.
                     </p>
 
-                    <div class="project-tools">
-                        MySQL · SQL · Power Query · Power BI
-                    </div>
+                    <div class="project-links">
 
-                    <a href="https://github.com/javeria-khalid-dataanalyst/HR_Project_Performance"
-                       class="project-button"
-                       target="_blank">
-                        View Project →
-                    </a>
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                        <a href="#" class="github-link">
+                            GitHub
+                        </a>
+
+                    </div>
 
                 </div>
 
             </article>
 
 
+            <!-- PROJECT 3 -->
+
+            <article class="project-card"
+                     data-category="powerbi">
+
+                <div class="project-image">
+
+                    <div class="mock-dashboard">
+
+                        <div class="dashboard-header"></div>
+
+                        <div class="dashboard-grid">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-tools">
+
+                        <span>Power BI</span>
+                        <span>DAX</span>
+                        <span>Power Query</span>
+
+                    </div>
+
+                    <h3>
+                        Store Sales Performance Dashboard
+                    </h3>
+
+                    <p>
+                        Management-focused dashboard designed to
+                        monitor store performance, sales trends,
+                        profitability and key KPIs.
+                    </p>
+
+                    <div class="project-links">
+
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                        <a href="#" class="github-link">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 4 -->
+
+            <article class="project-card"
+                     data-category="powerbi">
+
+                <div class="project-image">
+
+                    <div class="mock-dashboard education-dashboard">
+
+                        <div class="student-bars">
+
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+
+                        </div>
+
+                        <div class="student-chart"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-tools">
+
+                        <span>Power BI</span>
+                        <span>DAX</span>
+                        <span>Power Query</span>
+
+                    </div>
+
+                    <h3>
+                        Student Performance Analytics
+                    </h3>
+
+                    <p>
+                        Education analytics dashboard exploring
+                        students, subjects, teachers, grades,
+                        pass rates and academic progress.
+                    </p>
+
+                    <div class="project-links">
+
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                        <a href="#" class="github-link">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
         </div>
 
     </div>
@@ -799,71 +788,107 @@
 </section>
 
 
-<!-- SKILLS -->
+<!-- =========================
+     PROCESS
+========================= -->
 
-<section id="skills" class="skills-section">
+<section class="section section-dark">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-heading">
 
-            <div class="small-title">
-                Toolkit
-            </div>
+            <p class="section-label">
+                MY APPROACH
+            </p>
 
-            <h2>Technical Skills</h2>
+            <h2>
+                How I Work With Data
+            </h2>
 
         </div>
 
 
-        <div class="skill-grid">
+        <div class="process-grid">
 
-            <div class="skill-box">
-                <h3>Power BI</h3>
+
+            <div class="process-item">
+
+                <span>01</span>
+
+                <h3>
+                    Understand
+                </h3>
+
                 <p>
-                    Dashboard development, DAX, KPIs,
-                    data modeling, and interactive reporting.
+                    Start with the business question and understand
+                    what decision the analysis needs to support.
                 </p>
+
             </div>
 
-            <div class="skill-box">
-                <h3>SQL</h3>
+
+            <div class="process-item">
+
+                <span>02</span>
+
+                <h3>
+                    Clean
+                </h3>
+
                 <p>
-                    MySQL, joins, CTEs, aggregations,
-                    filtering, and data preparation.
+                    Identify duplicates, missing values, errors
+                    and inconsistencies.
                 </p>
+
             </div>
 
-            <div class="skill-box">
-                <h3>Power Query</h3>
+
+            <div class="process-item">
+
+                <span>03</span>
+
+                <h3>
+                    Transform
+                </h3>
+
                 <p>
-                    Data cleaning, transformation,
-                    aggregation, and ETL workflows.
+                    Prepare the dataset using Power Query,
+                    SQL or Python.
                 </p>
+
             </div>
 
-            <div class="skill-box">
-                <h3>Excel</h3>
+
+            <div class="process-item">
+
+                <span>04</span>
+
+                <h3>
+                    Analyze
+                </h3>
+
                 <p>
-                    Data analysis, formulas, cleaning,
-                    and business reporting.
+                    Explore trends, patterns, KPIs and relationships
+                    hidden within the data.
                 </p>
+
             </div>
 
-            <div class="skill-box">
-                <h3>Data Visualization</h3>
-                <p>
-                    Clear dashboards and visual storytelling
-                    designed around business questions.
-                </p>
-            </div>
 
-            <div class="skill-box">
-                <h3>Business Analysis</h3>
+            <div class="process-item">
+
+                <span>05</span>
+
+                <h3>
+                    Visualize
+                </h3>
+
                 <p>
-                    Translating data findings into
-                    actionable business recommendations.
+                    Build clear dashboards and communicate insights
+                    in a decision-friendly way.
                 </p>
+
             </div>
 
         </div>
@@ -873,47 +898,244 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     EXPERIENCE / JOURNEY
+========================= -->
 
-<section id="contact" class="contact">
+<section id="experience" class="section">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-heading">
 
-            <div class="small-title">
-                Get In Touch
+            <p class="section-label">
+                MY JOURNEY
+            </p>
+
+            <h2>
+                From Mathematics to Data Analytics
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        2016
+                    </span>
+
+                    <h3>
+                        Master's Degree in Applied Mathematics
+                    </h3>
+
+                    <p>
+                        Karachi University
+                    </p>
+
+                </div>
+
             </div>
 
-            <h2>Let's connect.</h2>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        Foundation
+                    </span>
+
+                    <h3>
+                        Excel & Data Analysis
+                    </h3>
+
+                    <p>
+                        Building a strong foundation in spreadsheets,
+                        analytical thinking and data organization.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        Development
+                    </span>
+
+                    <h3>
+                        Power Query & SQL
+                    </h3>
+
+                    <p>
+                        Learning data transformation, querying,
+                        cleaning and preparing datasets.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        Analytics
+                    </span>
+
+                    <h3>
+                        Power BI & DAX
+                    </h3>
+
+                    <p>
+                        Creating interactive dashboards,
+                        data models, KPIs and business reports.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        Expanding
+                    </span>
+
+                    <h3>
+                        Python & Data Projects
+                    </h3>
+
+                    <p>
+                        Expanding analytical capabilities with Python,
+                        Pandas and practical portfolio projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GITHUB
+========================= -->
+
+<section class="github-section">
+
+    <div class="container github-box">
+
+        <div>
+
+            <p class="section-label">
+                OPEN SOURCE & PROJECTS
+            </p>
+
+            <h2>
+                Explore My Work
+            </h2>
 
             <p>
-                I'm interested in data analytics opportunities,
-                freelance projects, and meaningful data-driven work.
+                Take a closer look at my analytics projects,
+                dashboards, SQL work and data transformation workflows.
             </p>
 
         </div>
 
 
-        <div class="contact-links">
+        <a href="https://github.com/javeria-khalid-dataanalyst"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+
+            Visit My GitHub →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="section contact-section">
+
+    <div class="container contact-container">
+
+        <p class="section-label">
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Let's Turn Data Into Insight.
+        </h2>
+
+        <p>
+            Have a dataset, dashboard idea, or analytics problem?
+            I'd love to connect.
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a href="mailto:YOUR_EMAIL@example.com"
+               class="btn btn-primary">
+
+                Email Me
+
+            </a>
+
+
+            <a href="YOUR_LINKEDIN_URL"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-secondary">
+
+                LinkedIn
+
+            </a>
+
 
             <a href="https://github.com/javeria-khalid-dataanalyst"
-               class="contact-button"
-               target="_blank">
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-secondary">
+
                 GitHub
-            </a>
 
-            <!-- Replace YOUR-LINKEDIN-URL -->
-            <a href="YOUR-LINKEDIN-URL"
-               class="contact-button"
-               target="_blank">
-                LinkedIn
-            </a>
-
-            <!-- Replace YOUR-EMAIL -->
-            <a href="mailto:jiaraza13@gmail.com"
-               class="contact-button">
-                Email Me
             </a>
 
         </div>
@@ -922,14 +1144,72 @@
 
 </section>
 
+</main>
 
-<!-- FOOTER -->
 
-<footer>
+<!-- =========================
+     FOOTER
+========================= -->
 
-    © 2026 Javeria Khalid · Data Analyst Portfolio
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <strong>
+                Javeria Khalid
+            </strong>
+
+            <span>
+                Junior Data Analyst
+            </span>
+
+        </div>
+
+
+        <p>
+            SQL • Power BI • Excel • Python
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="https://github.com/javeria-khalid-dataanalyst"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a href="YOUR_LINKEDIN_URL"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a href="mailto:YOUR_EMAIL@example.com">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container copyright">
+
+        © 2026 Javeria Khalid. All rights reserved.
+
+    </div>
 
 </footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="script.js"></script>
 
 </body>
 </html>
