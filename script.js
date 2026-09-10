@@ -1,418 +1,271 @@
-/* =========================================================
-   JAVERIA KHALID — DATA ANALYST PORTFOLIO
-   Main JavaScript
-========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
 
+    /* =====================================================
+       01. SMOOTH SCROLLING
+    ====================================================== */
 
-/* =========================================================
-   1. MOBILE NAVIGATION
-========================================================= */
+    const anchorLinks = document.querySelectorAll(
+        'a[href^="#"]'
+    );
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+    anchorLinks.forEach(link => {
 
-if (menuToggle && navLinks) {
+        link.addEventListener("click", function (event) {
 
-    menuToggle.addEventListener("click", () => {
+            const targetId =
+                this.getAttribute("href");
 
-        navLinks.classList.toggle("active");
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
+                return;
+            }
 
-        const isOpen = navLinks.classList.contains("active");
+            const target =
+                document.querySelector(targetId);
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
+            if (!target) {
+                return;
+            }
 
-    });
+            event.preventDefault();
 
-
-    /* Close mobile menu after clicking a link */
-
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                navLinks.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
 
         });
 
-}
-
-
-/* =========================================================
-   2. NAVBAR ON SCROLL
-========================================================= */
-
-const navbar = document.querySelector(".navbar");
-
-function updateNavbar() {
-
-    if (!navbar) return;
-
-    if (window.scrollY > 40) {
-
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
-
-    }
-
-}
-
-window.addEventListener(
-    "scroll",
-    updateNavbar,
-    { passive: true }
-);
-
-updateNavbar();
-
-
-/* =========================================================
-   3. PROJECT FILTERS
-========================================================= */
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
-
-const projectCards =
-    document.querySelectorAll(".project-card");
-
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        /* Remove active state */
-
-        filterButtons.forEach(btn => {
-
-            btn.classList.remove("active");
-
-        });
-
-        /* Activate clicked button */
-
-        button.classList.add("active");
-
-        const selectedCategory =
-            button.dataset.filter;
-
-
-        /* Show / hide projects */
-
-        projectCards.forEach(project => {
-
-            const projectCategory =
-                project.dataset.category;
-
-
-            if (
-                selectedCategory === "all" ||
-                projectCategory === selectedCategory
-            ) {
-
-                project.classList.remove("hidden");
-
-            } else {
-
-                project.classList.add("hidden");
-
-            }
-
-        });
-
     });
 
-});
 
 
-/* =========================================================
-   4. SCROLL REVEAL ANIMATION
-========================================================= */
+    /* =====================================================
+       02. SCROLL REVEAL
+    ====================================================== */
 
-const revealElements =
-    document.querySelectorAll(
-        ".section-heading, " +
-        ".about-text, " +
-        ".stat-card, " +
-        ".skill-card, " +
-        ".project-card, " +
-        ".process-item, " +
-        ".timeline-item, " +
-        ".github-box, " +
-        ".contact-container"
-    );
+    const revealElements =
+        document.querySelectorAll(
+            ".section, .project-card, .github-section, .contact-section"
+        );
 
 
-/*
-   Add initial reveal class
-*/
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
 
-revealElements.forEach(element => {
+                entries.forEach(entry => {
 
-    element.classList.add("reveal");
+                    if (entry.isIntersecting) {
 
-});
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
+                        observer.unobserve(
+                            entry.target
+                        );
 
-/*
-   Intersection Observer
-*/
+                    }
 
-const revealObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
+                });
 
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================================
-   5. STAGGER PROJECT / SKILL ANIMATIONS
-========================================================= */
-
-document
-    .querySelectorAll(
-        ".skills-grid, .projects-grid, .process-grid"
-    )
-    .forEach(container => {
-
-        const children =
-            container.children;
-
-        Array.from(children).forEach(
-            (child, index) => {
-
-                child.style.transitionDelay =
-                    `${index * 80}ms`;
-
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
             }
         );
 
-    });
-
-
-/* =========================================================
-   6. ACTIVE NAVIGATION LINK
-========================================================= */
-
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-const navigationLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
-
-
-function updateActiveNavigation() {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop - 160;
-
-        const sectionHeight =
-            section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY <
-                sectionTop + sectionHeight
-        ) {
-
-            currentSection =
-                section.getAttribute("id");
-
-        }
-
-    });
-
-
-    navigationLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        const target =
-            link.getAttribute("href");
-
-        if (
-            target === `#${currentSection}`
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    updateActiveNavigation,
-    { passive: true }
-);
-
-updateActiveNavigation();
-
-
-/* =========================================================
-   7. EXTERNAL LINKS
-========================================================= */
-
-document
-    .querySelectorAll(
-        'a[target="_blank"]'
-    )
-    .forEach(link => {
-
-        link.setAttribute(
-            "rel",
-            "noopener noreferrer"
-        );
-
-    });
-
-
-/* =========================================================
-   8. PROJECT LINK PROTECTION
-========================================================= */
-
-document
-    .querySelectorAll(
-        '.project-btn, .github-link'
-    )
-    .forEach(link => {
-
-        link.addEventListener("click", event => {
-
-            const href =
-                link.getAttribute("href");
-
-
-            /*
-               Don't allow empty # links
-               to jump to the top.
-            */
-
-            if (
-                !href ||
-                href === "#"
-            ) {
-
-                event.preventDefault();
-
-                alert(
-                    "Project link will be added soon."
-                );
-
-            }
-
-        });
-
-    });
-
-
-/* =========================================================
-   9. CURRENT YEAR
-========================================================= */
-
-const yearElements =
-    document.querySelectorAll(
-        ".copyright"
-    );
-
-
-yearElements.forEach(element => {
-
-    /*
-       This keeps the copyright year
-       automatically updated.
-    */
-
-    element.innerHTML =
-        element.innerHTML.replace(
-            /©\s*\d{4}/,
-            `© ${new Date().getFullYear()}`
-        );
-
-});
-
-
-/* =========================================================
-   10. REDUCED MOTION
-========================================================= */
-
-const prefersReducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    );
-
-
-if (prefersReducedMotion.matches) {
 
     revealElements.forEach(element => {
 
-        element.classList.add("visible");
+        revealObserver.observe(element);
 
     });
 
-}
 
 
-/* =========================================================
-   11. CONSOLE MESSAGE
-========================================================= */
+    /* =====================================================
+       03. PROJECT CARD STAGGER
+    ====================================================== */
 
-console.log(
-    "Javeria Khalid | Junior Data Analyst Portfolio"
-);
+    const projectCards =
+        document.querySelectorAll(
+            ".project-card"
+        );
 
-console.log(
-    "Portfolio loaded successfully."
-);
+
+    projectCards.forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 80}ms`;
+
+    });
+
+
+
+    /* =====================================================
+       04. ACTIVE SECTION TRACKING
+    ====================================================== */
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+
+    const sectionObserver =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting &&
+                        entry.intersectionRatio > 0.15
+                    ) {
+
+                        history.replaceState(
+                            null,
+                            "",
+                            `#${entry.target.id}`
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: [0.15, 0.5],
+                rootMargin:
+                    "-15% 0px -65% 0px"
+            }
+        );
+
+
+    sections.forEach(section => {
+
+        sectionObserver.observe(section);
+
+    });
+
+
+
+    /* =====================================================
+       05. BACK-TO-TOP BUTTON
+    ====================================================== */
+
+    const backToTop =
+        document.querySelector(
+            '.footer-bottom a[href="#home"]'
+        );
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       06. BUTTON MICRO-INTERACTION
+    ====================================================== */
+
+    const interactiveButtons =
+        document.querySelectorAll(
+            ".primary-button, .secondary-button, .social-button, .contact-button, .project-link"
+        );
+
+
+    interactiveButtons.forEach(button => {
+
+        button.addEventListener(
+            "mouseenter",
+            () => {
+
+                button.style.setProperty(
+                    "--button-hover",
+                    "1"
+                );
+
+            }
+        );
+
+
+        button.addEventListener(
+            "mouseleave",
+            () => {
+
+                button.style.setProperty(
+                    "--button-hover",
+                    "0"
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       07. PREVENT EMPTY LINKS
+    ====================================================== */
+
+    const emptyLinks =
+        document.querySelectorAll(
+            'a[href="#"]'
+        );
+
+
+    emptyLinks.forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       08. YEAR
+    ====================================================== */
+
+    const yearElements =
+        document.querySelectorAll(
+            "[data-current-year]"
+        );
+
+
+    yearElements.forEach(element => {
+
+        element.textContent =
+            new Date().getFullYear();
+
+    });
+
+});
