@@ -1,271 +1,116 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Mobile Navigation Toggle
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-    /* =====================================================
-       01. SMOOTH SCROLLING
-    ====================================================== */
-
-    const anchorLinks = document.querySelectorAll(
-        'a[href^="#"]'
-    );
-
-    anchorLinks.forEach(link => {
-
-        link.addEventListener("click", function (event) {
-
-            const targetId =
-                this.getAttribute("href");
-
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-                return;
-            }
-
-            const target =
-                document.querySelector(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
+    if (hamburger) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
         });
-
-    });
-
-
-
-    /* =====================================================
-       02. SCROLL REVEAL
-    ====================================================== */
-
-    const revealElements =
-        document.querySelectorAll(
-            ".section, .project-card, .github-section, .contact-section"
-        );
-
-
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12,
-                rootMargin: "0px 0px -40px 0px"
-            }
-        );
-
-
-    revealElements.forEach(element => {
-
-        revealObserver.observe(element);
-
-    });
-
-
-
-    /* =====================================================
-       03. PROJECT CARD STAGGER
-    ====================================================== */
-
-    const projectCards =
-        document.querySelectorAll(
-            ".project-card"
-        );
-
-
-    projectCards.forEach((card, index) => {
-
-        card.style.transitionDelay =
-            `${index * 80}ms`;
-
-    });
-
-
-
-    /* =====================================================
-       04. ACTIVE SECTION TRACKING
-    ====================================================== */
-
-    const sections =
-        document.querySelectorAll(
-            "section[id]"
-        );
-
-
-    const sectionObserver =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach(entry => {
-
-                    if (
-                        entry.isIntersecting &&
-                        entry.intersectionRatio > 0.15
-                    ) {
-
-                        history.replaceState(
-                            null,
-                            "",
-                            `#${entry.target.id}`
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: [0.15, 0.5],
-                rootMargin:
-                    "-15% 0px -65% 0px"
-            }
-        );
-
-
-    sections.forEach(section => {
-
-        sectionObserver.observe(section);
-
-    });
-
-
-
-    /* =====================================================
-       05. BACK-TO-TOP BUTTON
-    ====================================================== */
-
-    const backToTop =
-        document.querySelector(
-            '.footer-bottom a[href="#home"]'
-        );
-
-
-    if (backToTop) {
-
-        backToTop.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-        );
-
     }
 
-
-
-    /* =====================================================
-       06. BUTTON MICRO-INTERACTION
-    ====================================================== */
-
-    const interactiveButtons =
-        document.querySelectorAll(
-            ".primary-button, .secondary-button, .social-button, .contact-button, .project-link"
-        );
-
-
-    interactiveButtons.forEach(button => {
-
-        button.addEventListener(
-            "mouseenter",
-            () => {
-
-                button.style.setProperty(
-                    "--button-hover",
-                    "1"
-                );
-
-            }
-        );
-
-
-        button.addEventListener(
-            "mouseleave",
-            () => {
-
-                button.style.setProperty(
-                    "--button-hover",
-                    "0"
-                );
-
-            }
-        );
-
+    // Close menu when clicking link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+        });
     });
 
+    // 2. Animated Counter for Key Performance Stats
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; 
 
+    const startCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
 
-    /* =====================================================
-       07. PREVENT EMPTY LINKS
-    ====================================================== */
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            updateCount();
+        });
+    };
 
-    const emptyLinks =
-        document.querySelectorAll(
-            'a[href="#"]'
-        );
+    // Trigger Counter Animation when visible
+    let countTriggered = false;
+    window.addEventListener('scroll', () => {
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const sectionPos = statsSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
 
-
-    emptyLinks.forEach(link => {
-
-        link.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
+            if (sectionPos < screenPos && !countTriggered) {
+                startCounters();
+                countTriggered = true;
             }
-        );
-
+        }
     });
 
+    // 3. Subtle Interactive Particle Canvas Background
+    const canvas = document.getElementById("bg-canvas");
+    if (canvas) {
+        const ctx = canvas.getContext("2d");
 
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
 
-    /* =====================================================
-       08. YEAR
-    ====================================================== */
+        window.addEventListener("resize", () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
 
-    const yearElements =
-        document.querySelectorAll(
-            "[data-current-year]"
-        );
+        const particles = [];
+        const particleCount = Math.floor(width / 25);
 
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.radius = Math.random() * 1.5 + 0.5;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
 
-    yearElements.forEach(element => {
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(56, 189, 248, ${this.alpha})`;
+                ctx.fill();
+            }
 
-        element.textContent =
-            new Date().getFullYear();
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
 
-    });
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+        }
 
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
 });
