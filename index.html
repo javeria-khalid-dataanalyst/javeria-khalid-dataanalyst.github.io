@@ -2,878 +2,224 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Javeria Khalid — Junior Data Analyst. I clean, analyze and transform data into clear insights and meaningful business decisions.">
-
-    <meta name="author"
-          content="Javeria Khalid">
-
-    <title>Javeria Khalid | Junior Data Analyst</title>
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Patrick+Hand&display=swap"
-          rel="stylesheet">
-
-
-    <!-- =====================================================
-         ICONS
-    ====================================================== -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-    <!-- =====================================================
-         STYLESHEET
-    ====================================================== -->
-
-    <link rel="stylesheet"
-          href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javeria | Data Analyst Portfolio</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-    <!-- =====================================================
-         PAGE WRAPPER
-    ====================================================== -->
+    <!-- Canvas Background Animation -->
+    <canvas id="bg-canvas"></canvas>
 
-    <main class="page-shell">
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <section class="hero" id="home">
-
-            <div class="hero-top">
-
-                <span class="availability">
-                    <span class="status-dot"></span>
-                    Open to opportunities
-                </span>
-
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">&lt;Javeria<span>/DA</span>&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Tools & Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
             </div>
+        </nav>
+    </header>
 
-
-            <p class="eyebrow">
-                Hello, I'm Javeria
-            </p>
-
-
-            <h1>
-                Junior
-                <span>Data Analyst</span>
-            </h1>
-
-
-            <p class="hero-tagline">
-                Turning raw data into clear insights
-                and meaningful business decisions.
-            </p>
-
-
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="status-dot"></span> Open to Roles & Freelance Work
+            </div>
+            <h1>Hi, I'm <span class="highlight">Javeria</span> 👋</h1>
+            <h2 class="typing-text">Data Analyst | Power BI · MySQL · Power Query</h2>
             <p class="hero-description">
-                I clean, analyze, and transform data into meaningful
-                insights and interactive dashboards using SQL,
-                Power BI, Excel, Power Query, and Python.
+                I turn messy, real-world data into clear, decision-ready dashboards — documenting the complete analytical journey from raw data cleaning and star-schema data modeling to complex DAX calculations.
             </p>
-
-
-            <!-- HERO BUTTONS -->
-
-            <div class="hero-actions">
-
-                <a href="#projects"
-                   class="primary-button">
-
-                    Explore Projects
-                    <i class="fa-solid fa-arrow-down"></i>
-
-                </a>
-
-
-                <a href="YOUR_RESUME_LINK"
-                   class="secondary-button"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    View Resume
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                </a>
-
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
+                <a href="https://www.linkedin.com/in/javeria-khalid-dataanalyst/" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             </div>
+        </div>
+    </section>
 
-
-            <!-- SOCIAL BUTTONS -->
-
-            <div class="social-buttons">
-
-                <a href="https://github.com/javeria-khalid-dataanalyst"
-                   class="social-button"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="GitHub">
-
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-
-                </a>
-
-
-                <a href="YOUR_LINKEDIN_URL"
-                   class="social-button"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="LinkedIn">
-
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <span>LinkedIn</span>
-
-                </a>
-
-
-                <a href="mailto:YOUR_EMAIL@example.com"
-                   class="social-button"
-                   aria-label="Email">
-
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>Email</span>
-
-                </a>
-
+    <!-- Quick Stats Section -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <h3 class="counter" data-target="44392">0</h3>
+                <p>Records Analyzed</p>
             </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             DIVIDER
-        ================================================== -->
-
-        <div class="section-divider"></div>
-
-
-
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
-
-        <section class="section" id="about">
-
-            <div class="section-label">
-                <span>01</span>
-                About
+            <div class="stat-card">
+                <h3 class="counter" data-target="100">0</h3>
+                <p>% End-to-End ETL Process</p>
             </div>
-
-
-            <h2>
-                Data should tell
-                <em>a story.</em>
-            </h2>
-
-
-            <p class="section-text">
-                My approach to analytics starts with understanding
-                the business question before touching the dashboard.
-            </p>
-
-
-            <p class="section-text">
-                I enjoy taking messy or raw data, cleaning and
-                transforming it, exploring patterns, and turning
-                the results into clear visual stories that are
-                easier to understand and act on.
-            </p>
-
-
-            <div class="mini-note">
-
-                <span class="note-icon">
-                    ✦
-                </span>
-
-                <p>
-                    Curious mind. Analytical thinking.
-                    Always learning.
-                </p>
-
+            <div class="stat-card">
+                <h3>DAX & SQL</h3>
+                <p>Data Modeling & Querying</p>
             </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SKILLS
-        ================================================== -->
-
-        <section class="section" id="skills">
-
-            <div class="section-label">
-                <span>02</span>
-                Toolkit
-            </div>
-
-
-            <h2>
-                Tools I use to
-                <em>work with data.</em>
-            </h2>
-
-
-            <div class="skills-list">
-
-                <div class="skill-row">
-
-                    <span class="skill-number">
-                        01
-                    </span>
-
-                    <div>
-                        <h3>SQL</h3>
-                        <p>
-                            Querying, filtering, aggregation,
-                            joins, CTEs and data preparation.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-row">
-
-                    <span class="skill-number">
-                        02
-                    </span>
-
-                    <div>
-                        <h3>Power BI</h3>
-                        <p>
-                            Interactive dashboards, data models,
-                            KPIs and business-focused reporting.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-row">
-
-                    <span class="skill-number">
-                        03
-                    </span>
-
-                    <div>
-                        <h3>Power Query</h3>
-                        <p>
-                            Data cleaning, transformation,
-                            shaping and preparation.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-row">
-
-                    <span class="skill-number">
-                        04
-                    </span>
-
-                    <div>
-                        <h3>Excel</h3>
-                        <p>
-                            Data analysis, cleaning, formulas,
-                            summaries and dashboards.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-row">
-
-                    <span class="skill-number">
-                        05
-                    </span>
-
-                    <div>
-                        <h3>Python</h3>
-                        <p>
-                            Data cleaning, exploration and
-                            visualization with Python.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             PROJECTS
-        ================================================== -->
-
-        <section class="section projects-section"
-                 id="projects">
-
-            <div class="section-label">
-                <span>03</span>
-                Selected Work
-            </div>
-
-
-            <h2>
-                A few things I've
-                <em>worked on.</em>
-            </h2>
-
-
-            <p class="section-text">
-                A selection of analytics projects focused on
-                solving practical business questions.
-            </p>
-
-
-
-            <!-- PROJECT 01 -->
-
-            <article class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        PROJECT 01
-                    </span>
-
-                    <span class="project-type">
-                        Power BI
-                    </span>
-
-                </div>
-
-
-                <div class="project-image">
-
-                    <div class="project-placeholder">
-
-                        <span>
-                            Dashboard Preview
-                        </span>
-
-                        <i class="fa-solid fa-chart-simple"></i>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Project Performance
-                        &amp; Workforce Analytics
-                    </h3>
-
-
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-text">
                     <p>
-                        Analyzed departmental budgets, workforce
-                        costs, project status and financial health
-                        to identify projects and departments that
-                        may require management attention.
+                        Data is more than numbers—it's the story of a business waiting to be told. As a dedicated <strong>Data Analyst</strong>, I focus on building intuitive, actionable, and visually compelling data solutions.
                     </p>
-
-
-                    <div class="tech-tags">
-
-                        <span>SQL</span>
-                        <span>Power Query</span>
-                        <span>Power BI</span>
-
-                    </div>
-
-
-                    <a href="YOUR_PROJECT_GITHUB_LINK"
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-
-                        View Project
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- PROJECT 02 -->
-
-            <article class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        PROJECT 02
-                    </span>
-
-                    <span class="project-type">
-                        SQL + Power BI
-                    </span>
-
-                </div>
-
-
-                <div class="project-image">
-
-                    <div class="project-placeholder">
-
-                        <span>
-                            Dashboard Preview
-                        </span>
-
-                        <i class="fa-solid fa-chart-line"></i>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Product Sales
-                        Analysis
-                    </h3>
-
-
                     <p>
-                        Explored product-level sales performance
-                        to identify trends, high-performing products
-                        and areas where business performance could
-                        be improved.
+                        My workflow goes beyond just creating charts. I handle end-to-end data transformation: cleaning raw data with <strong>Power Query (M)</strong>, querying databases with <strong>MySQL</strong>, structuring efficient <strong>Data Models</strong>, and creating advanced <strong>DAX (YTD/YoY)</strong> measures for strategic business insights.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills & Tools Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Tech <span>Stack & Tools</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-chart-bar"></i></div>
+                    <h3>Power BI</h3>
+                    <p>Interactive Dashboards, Data Modeling, Star Schemas & Advanced Analytics</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>MySQL</h3>
+                    <p>Relational Databases, Joins, Aggregations, Window Functions & CTEs</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-filter"></i></div>
+                    <h3>Power Query (M)</h3>
+                    <p>ETL Pipelines, Data Cleaning, Custom Transformations & Merging</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>DAX</h3>
+                    <p>Time Intelligence (YTD/YoY), Dynamic Measures & Calculated Columns</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-file-excel"></i></div>
+                    <h3>Advanced Excel</h3>
+                    <p>Pivot Tables, Complex Formulas, VLOOKUP/XLOOKUP & Data Validation</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="tech-tags">
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <div class="projects-grid">
 
-                        <span>SQL</span>
-                        <span>Power BI</span>
-
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-store"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/javeria-khalid-dataanalyst/kiddco-toys-sales-dashboard" target="_blank" title="View Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
                     </div>
-
-
-                    <a href="YOUR_PROJECT_GITHUB_LINK"
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-
-                        View Project
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- PROJECT 03 -->
-
-            <article class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        PROJECT 03
-                    </span>
-
-                    <span class="project-type">
-                        Data Analytics
-                    </span>
-
-                </div>
-
-
-                <div class="project-image">
-
-                    <div class="project-placeholder">
-
-                        <span>
-                            Dashboard Preview
-                        </span>
-
-                        <i class="fa-solid fa-database"></i>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <h3>
-                        KiddCo Toys
-                        Sales Dashboard
-                    </h3>
-
-
-                    <p>
-                        A retail sales dashboard analyzing
-                        performance across stores, products
-                        and sales metrics with a focus on
-                        business decision-making.
+                    <h3>🧸 KiddCo Toys: Sales Performance Dashboard</h3>
+                    <p class="project-desc">
+                        Designed an interactive sales performance dashboard for a toy retail chain. Built star-schema data models and engineered advanced DAX measures for YTD and YoY performance tracking.
                     </p>
-
-
-                    <div class="tech-tags">
-
+                    <div class="project-tags">
                         <span>Power BI</span>
-                        <span>Power Query</span>
                         <span>DAX</span>
-
+                        <span>Data Modeling</span>
+                        <span>Retail Analytics</span>
                     </div>
-
-
-                    <a href="https://github.com/javeria-khalid-dataanalyst/kiddco-toys-sales-dashboard"
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-
-                        View Project
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
+                    <a href="https://github.com/javeria-khalid-dataanalyst/kiddco-toys-sales-dashboard" target="_blank" class="project-btn">Explore Repository <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-            </article>
-
-        </section>
-
-
-
-        <!-- =================================================
-             PROCESS
-        ================================================== -->
-
-        <section class="section" id="process">
-
-            <div class="section-label">
-                <span>04</span>
-                My Process
-            </div>
-
-
-            <h2>
-                From messy data
-                <em>to clarity.</em>
-            </h2>
-
-
-            <div class="process-list">
-
-                <div class="process-item">
-
-                    <span>01</span>
-
-                    <div>
-                        <h3>Understand</h3>
-                        <p>
-                            Start with the business question,
-                            objectives and important KPIs.
-                        </p>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/javeria-khalid-dataanalyst/edtech-student-performance-dashboard" target="_blank" title="View Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
                     </div>
-
-                </div>
-
-
-                <div class="process-item">
-
-                    <span>02</span>
-
-                    <div>
-                        <h3>Clean</h3>
-                        <p>
-                            Inspect, clean and transform the
-                            data into a reliable analytical dataset.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="process-item">
-
-                    <span>03</span>
-
-                    <div>
-                        <h3>Analyze</h3>
-                        <p>
-                            Explore patterns, relationships,
-                            trends and performance indicators.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="process-item">
-
-                    <span>04</span>
-
-                    <div>
-                        <h3>Communicate</h3>
-                        <p>
-                            Turn findings into simple,
-                            meaningful visual insights.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             JOURNEY
-        ================================================== -->
-
-        <section class="section" id="journey">
-
-            <div class="section-label">
-                <span>05</span>
-                Journey
-            </div>
-
-
-            <h2>
-                Always learning.
-                <em>Always improving.</em>
-            </h2>
-
-
-            <div class="journey-card">
-
-                <div class="journey-line">
-
-                    <span class="journey-dot"></span>
-
-                </div>
-
-
-                <div class="journey-content">
-
-                    <span class="journey-date">
-                        2026
-                    </span>
-
-                    <h3>
-                        Building my path in data analytics
-                    </h3>
-
-                    <p>
-                        Developing practical skills through
-                        hands-on projects in SQL, Power BI,
-                        Power Query, Excel and Python.
+                    <h3>🎓 EdTech Student Performance Dashboard</h3>
+                    <p class="project-desc">
+                        Comprehensive Power BI analysis evaluating 44,392 student assessment records. Identified key learning bottlenecks, completion rates, and performance trends across various demographics.
                     </p>
+                    <div class="project-tags">
+                        <span>Power BI</span>
+                        <span>Big Data Analytics</span>
+                        <span>Power Query</span>
+                        <span>EdTech</span>
+                    </div>
+                    <a href="https://github.com/javeria-khalid-dataanalyst/edtech-student-performance-dashboard" target="_blank" class="project-btn">Explore Repository <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
 
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-users-gear"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/javeria-khalid-dataanalyst/HR_Project_Performance" target="_blank" title="View Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>💼 HR Project Performance Analysis</h3>
+                    <p class="project-desc">
+                        In-depth analysis of employee distribution, salary structures, department allocations, and project metrics using MySQL queries and Power Query, delivered via an interactive Power BI dashboard.
+                    </p>
+                    <div class="project-tags">
+                        <span>MySQL</span>
+                        <span>Power Query</span>
+                        <span>Power BI</span>
+                        <span>HR Analytics</span>
+                    </div>
+                    <a href="https://github.com/javeria-khalid-dataanalyst/HR_Project_Performance" target="_blank" class="project-btn">Explore Repository <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
-
-
-
-        <!-- =================================================
-             GITHUB
-        ================================================== -->
-
-        <section class="github-section">
-
-            <div class="github-icon">
-
-                <i class="fa-brands fa-github"></i>
-
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Let's <span>Connect</span></h2>
+                <p>I am actively seeking <strong>entry-level data analyst roles</strong> and <strong>freelance dashboard projects</strong>. Feel free to reach out to discuss how I can help transform your data!</p>
+                
+                <div class="contact-actions">
+                    <a href="https://www.linkedin.com/in/javeria-khalid-dataanalyst/" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
 
-
-            <p class="eyebrow">
-                More on GitHub
-            </p>
-
-
-            <h2>
-                See how I
-                <em>work with data.</em>
-            </h2>
-
-
-            <p>
-                Explore my projects, dashboards,
-                SQL work and data-cleaning experiments.
-            </p>
-
-
-            <a href="https://github.com/javeria-khalid-dataanalyst"
-               class="primary-button github-button"
-               target="_blank"
-               rel="noopener noreferrer">
-
-                Visit GitHub
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-            </a>
-
-        </section>
-
-
-
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
-
-        <section class="contact-section"
-                 id="contact">
-
-            <div class="section-label">
-                <span>06</span>
-                Contact
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Javeria. Designed & Built for Data Driven Decisions.</p>
+            <div class="socials">
+                <a href="https://github.com/javeria-khalid-dataanalyst" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/javeria-khalid-dataanalyst/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-
-
-            <h2>
-                Let's make sense
-                <em>of your data.</em>
-            </h2>
-
-
-            <p>
-                I'm interested in entry-level data analyst,
-                freelance analytics and data-cleaning
-                opportunities.
-            </p>
-
-
-            <div class="contact-buttons">
-
-                <a href="mailto:YOUR_EMAIL@example.com"
-                   class="contact-button">
-
-                    <i class="fa-regular fa-envelope"></i>
-
-                    <span>
-                        Email Me
-                    </span>
-
-                </a>
-
-
-                <a href="YOUR_LINKEDIN_URL"
-                   class="contact-button"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <i class="fa-brands fa-linkedin-in"></i>
-
-                    <span>
-                        LinkedIn
-                    </span>
-
-                </a>
-
-
-                <a href="https://github.com/javeria-khalid-dataanalyst"
-                   class="contact-button"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <i class="fa-brands fa-github"></i>
-
-                    <span>
-                        GitHub
-                    </span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             FOOTER
-        ================================================== -->
-
-        <footer>
-
-            <div class="footer-top">
-
-                <span>
-                    Javeria Khalid
-                </span>
-
-                <span>
-                    Junior Data Analyst
-                </span>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <span>
-                    © 2026 Javeria Khalid
-                </span>
-
-
-                <a href="#home">
-                    Back to top
-                    <i class="fa-solid fa-arrow-up"></i>
-                </a>
-
-            </div>
-
-        </footer>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+        </div>
+    </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
